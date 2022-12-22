@@ -1,0 +1,20 @@
+{% comment %} This Page shoud be use as base page. It means it will extend to all pages. USe it to create Top Navigation {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Job Portal - User</title>
+
+    {% comment %} Always Place The External Css links here in the head of the html {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <h1>Hello</h1>
+    {% block content %}{% endblock content %}
+    {% comment %} You will place all of your javascripts here at the bottom of the body {% endcomment %}
+    <script src="{% static 'javascript/index.js' %}"></script>
+</body>
+</html>
