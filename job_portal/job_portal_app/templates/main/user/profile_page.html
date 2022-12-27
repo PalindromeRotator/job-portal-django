@@ -1,0 +1,72 @@
+{% extends "main/user/base.html" %}
+{% load static %}
+{% block selectedNav %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Job Portal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="{% url 'main' %}">Main</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Profile</a>
+          </li>
+          {% comment %} <li class="nav-item">
+            <a class="nav-link" href="{% url 'job_alert' %}">Job Alerts</a>
+          </li> {% endcomment %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+{% endblock selectedNav%}
+{% block content %}
+<div class="container p-5" style="height: 90vh; overflow-y:scroll;">
+    <div>
+        <img src="{% static 'images/lion.jpeg' %}" class="img-thumbnail" alt="..." style="width:200px; height:200px;">
+        <input type="file" name="profile" id="profile" accept="image/png, image/gif, image/jpeg">
+  
+    </div>
+    <h5 class="mt-2">User Full Name(@Username)</h5>
+    <p>email@example.com</p>
+
+    <div class="mb-5">
+      <h5>JOB ALERTS</h5>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+         Via Email
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+        <label class="form-check-label" for="flexCheckChecked">
+           Via SMS
+        </label>
+      </div>
+    </div>
+      
+    <form style="width:50%">
+        <div class="mb-3">
+            <label for="inputPassword2" class="form-label">Old Password</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Old Password">
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword2" class="form-label">New Password</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="New Password">
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword3" class="form-label">Confirm New Password</label>
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Confirm New Password">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary mb-3">Change Password</button>
+        </div>
+    </form>
+
+    <button type="submit" class="btn btn-danger mt-5">Sign Out</button>
+</div>
+{%  endblock content %}

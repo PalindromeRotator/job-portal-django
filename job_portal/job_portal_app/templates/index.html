@@ -1,8 +1,51 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
-    <h2>Content for My App</h2>
-    <p>Stuff etc etc.</p>
-    <img src="{% static 'images/lion.jpeg' %}" alt="">
-    <button onClick="buttonClick()">Click Me</button>
-{% endblock content %}
+
+{% comment %} Block for login content {% endcomment %}
+{% block login %}
+<form class="row g-3">
+    <div class="col-auto">
+      <label for="staticEmail2" class="visually-hidden">Email</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="col-auto">
+      <label for="inputPassword2" class="visually-hidden">Password</label>
+      <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Login</button>
+    </div>
+</form>
+{% endblock login %}
+
+{% comment %} Block for signup content {% endcomment %}
+{% block signup %}
+<div class="container mt-5" style="width:40%;">
+    <h3 align="center">Sign Up Here</h3>
+    <form>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="John Dela Cruz">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Username</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="JohnDoe16">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div> 
+        <div class="mb-3">
+            <label for="inputPassword2" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword3" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Confirm Password">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary mb-3">Register</button>
+        </div>
+    </form>
+</div>
+{% endblock signup %}
